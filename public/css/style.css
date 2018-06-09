@@ -1,0 +1,12 @@
+body { 
+  padding-top: 56px; 
+}
+
+.jumbotron {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-variant: small-caps;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/newspaper2.png");
+  background-size: cover;
+  background-position: bottom;
+}
+
