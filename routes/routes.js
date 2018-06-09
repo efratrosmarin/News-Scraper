@@ -31,7 +31,7 @@ module.exports = function (app) {
     db.Article.find({}, function (err, dbArticles) {
 
       // Get the website data
-      axios.get("https://www.nytimes.com/section/arts/").then(function (response) {
+      axios.get("https://www.nytimes.com").then(function (response) {
 
         // Load into cheerio for scraping by element(s)
         let $ = cheerio.load(response.data);
@@ -128,20 +128,6 @@ module.exports = function (app) {
   });
 
 
-  // POST to save an article
-  // app.post("/savearticle/:id", function (req, res) {
-  //   db.Article.findByIdAndUpdate({
-  //       _id: req.params.id
-  //     }, {
-  //       saved: true
-  //     })
-  //     .then(function (dbArticle) {
-  //       res.json(dbArticle);
-  //     })
-  //     .catch(function (err) {
-  //       res.json(err);
-  //     })
-  // });
 
 
   // POST to delete a saved article

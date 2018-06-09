@@ -9,6 +9,9 @@
           <h3 class="card-header bg-secondary text-white">{{this.title}}</h3>
           <div class="card-body">
             <p class="card-text">{{this.summary}}</p>
+
+<a href={{this.link}} class="btn btn-info btn-sm mr-2" target="_blank">READ</a>
+
            <button class="btn btn-secondary btn-sm mr-2" id="viewnotes" data-id={{this.id}}>NOTES ({{this.notes.length}})</button>
           <button class="btn btn-danger btn-sm float-sm-right" id="deletearticle" data-id={{this.id}}>DELETE</button>
           </div>
@@ -31,5 +34,34 @@
       </div>
      {{/if}}
 
+  </div>
+</div>
+
+
+<div class="container-fluid px-2">
+  <div class="col-lg-6" id="search-results">
+
+{{!-- Notes modal --}}
+<div class="modal fade" id="notesModal" tabindex="-1" role="dialog" aria-labelledby="notesModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="notesModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="displaynotes">
+          {{!-- Saved notes displayed here --}}
+        </div>
+        <div class="form-group shadow-textarea mt-4">
+          <textarea class="form-control z-depth-1" id="bodyinput" rows="3" placeholder="New Note"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="savenote">SAVE NOTE</button>
+      </div>
+    </div>
   </div>
 </div>
