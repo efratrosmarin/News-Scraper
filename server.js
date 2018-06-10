@@ -26,10 +26,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Express static directory
 app.use(express.static("public"));
 
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoscraper";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/mongoscraper");
-
+mongoose.connect(MONGODB_URI);
 // Require our routes
 require('./routes/routes.js')(app);
 
