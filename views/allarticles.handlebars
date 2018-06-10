@@ -12,7 +12,7 @@
 
 <a href={{this.link}} class="btn btn-info btn-sm mr-2" target="_blank">READ</a>
 
-           <button class="btn btn-secondary btn-sm mr-2" id="viewnotes" data-id={{this.id}}>NOTES ({{this.notes.length}})</button>
+           <button class="btn btn-secondary btn-sm mr-2" id="viewnotes" data-id={{this.id}}>NOTES </button>
           <button class="btn btn-danger btn-sm float-sm-right" id="deletearticle" data-id={{this.id}}>DELETE</button>
           </div>
         </div>
@@ -23,14 +23,13 @@
     {{#if articles}}
     <footer class="footer py-3">
       <div class="container text-center">
-        <button type="button" class="btn btn-light btn-sm" id="cleardb">CLEAR DATABASE</button>
+        <button type="button" class="btn btn-secondary btn-lg mb-4" id="cleardb">Clear All Articles</button>
       </div>
     </footer>
     {{else}}
-      <div class="card">
-        <h3 class="card-header bg-secondary text-dark text-center">
-         No New Articles!
-        </h3>
+      <div class="text-center">
+        <button type="button" class="btn btn-secondary btn-lg mb-4" id="scrapeButton">Click Here for New Articles</button>
+      </div>
       </div>
      {{/if}}
 
@@ -60,7 +59,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" id="savenote">SAVE NOTE</button>
+        <button type="button" class="btn btn-secondary" id="savenote">SAVE NOTE</button>
       </div>
     </div>
   </div>

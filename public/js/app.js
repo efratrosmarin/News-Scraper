@@ -2,10 +2,8 @@
 $(document).on("click", "#scrapeButton", function () {
   $.get("/scrape", function (data) {
     if (data.count) {
-      $("#numArticles").text("Added " + data.count + " new articles!");
-    } else {
-      $("#numArticles").text("No new articles found");
-    }
+      $("#numArticles").text(`Here are Today's Top Stories`);
+    } 
     $("#scrapeModal").modal();
   });
 });
@@ -15,21 +13,11 @@ $(document).on("click", "#scrapeButton", function () {
 $(document).on("click", "#closeModal", function () {
   setTimeout(function() {
       window.location = "/";
-  }, 500);
+  }, 200);
 });
 
 
-// SAVE ARTICLE button clicked
-// $(document).on("click", "#savearticle", function () {
-//   let thisId = $(this).attr("data-id");
-//   $.ajax({
-//     method: "POST",
-//     url: "/savearticle/" + thisId
-//   })
-//     .then(function () {
-//       $("#" + thisId).slideUp();
-//     });
-// });
+
 
 
 // DELETE SAVED ARTICLE button clicked
@@ -41,7 +29,7 @@ $(document).on("click", "#deletearticle", function () {
   })
     .then(function () {
       // Fade and remove the element
-      $("#" + thisId).slideUp("normal", function() {
+      $("#" + thisId).slideDown("normal", function() {
         $(this).remove();
         if ($("#search-results").children().length == 0) {
           $("#noarticles").show();
@@ -115,9 +103,7 @@ function getNotes(articleId) {
           card.append(cardBody);
           $("#displaynotes").append(card);
         }
-      } else {
-        $("#displaynotes").text("No notes for this article yet!");
-      }
-      $('#viewnotes[data-id="' + data._id + '"]').text("NOTES (" + data.notes.length + ")");
+      } 
+      $('#viewnotes[data-id="' + data._id + '"]').text("NOTES");
     })
 }

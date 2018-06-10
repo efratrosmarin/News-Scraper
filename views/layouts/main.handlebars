@@ -4,35 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>News Scraper</title>
+  <title>Today's Top Stories</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
 
-  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-secondary">
-   
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav mr-auto">
-        
-      </div>
-      <div class="navbar-nav">
-        <button type="button" class="btn btn-danger btn-sm" id="scrapeButton">NEW ARTICLES</button>
-      </div>
-    </div>
-    </div>
-  </nav>
+  
 
   {{!-- Scrape results modal --}}
   <div class="modal fade" id="scrapeModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="scrapeModalLabel">Scrape Results</h5>
+       
           <button type="button" class="close" id="closeModal" data-dismiss="modal"></button>
         </div>
         <div class="modal-body">
@@ -47,7 +33,7 @@
 
   {{!-- Jumbotron Page Title --}}
   <div class="jumbotron jumbotron-fluid text-center text-white">
-      <h1 class="display-3">News Scraper</h1>
+      <h1 class="display-3">Today's Top Stories</h1>
      
      
   </div>
