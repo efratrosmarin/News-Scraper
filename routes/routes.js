@@ -44,7 +44,7 @@ module.exports = function (app) {
           result.title = $(element).children("h2").children("a").text();
           result.link = $(element).children("h2").children("a").attr("href");
           result.summary = $(element).children("p.summary").text();
-          // result.photo = $(element).children("media photo").text();
+         
 
 
           // Check for duplicates
@@ -73,21 +73,6 @@ module.exports = function (app) {
   });
 
 
-  // GET to load all saved articles
-  app.get("/saved", function (req, res) {
-    db.Article.find({
-        saved: true
-      })
-      .then(function (dbArticle) {
-        let hbsObject = {
-          articles: dbArticle
-        };
-        res.render("savedarticles", hbsObject);
-      })
-      .catch(function (err) {
-        res.json(err);
-      });
-  });
 
 
   // GET to load a specific article and its notes

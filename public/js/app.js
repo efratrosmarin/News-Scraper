@@ -1,22 +1,11 @@
-// SCRAPE NEW ARTICLES button clicked
+
+
+
 $(document).on("click", "#scrapeButton", function () {
   $.get("/scrape", function (data) {
-    if (data.count) {
-      $("#numArticles").text(`Here are Today's Top Stories`);
-    } 
-    $("#scrapeModal").modal();
-  });
-});
-
-
-// Scrape results modal OK button clicked
-$(document).on("click", "#closeModal", function () {
-  setTimeout(function() {
       window.location = "/";
-  }, 200);
+  }, );
 });
-
-
 
 
 
